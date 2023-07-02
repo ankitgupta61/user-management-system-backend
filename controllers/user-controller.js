@@ -1,5 +1,9 @@
 import User from "../Model/user-schema.js";
 
+export const testingServer = (req, res)=>{
+    res.send('Server is live now')
+}
+
 export const postUserData = async (req, res) =>{
     const userData = req.body;
     const lastUser = await User.findOne().sort({ id: -1 }); // Get the user with the highest id

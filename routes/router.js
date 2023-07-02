@@ -1,8 +1,9 @@
 import express from "express";
-import { postUserData, getUsers, getSpecificUser,editSpecificUser, deleteSpecificUser } from "../controllers/user-controller.js";
+import { postUserData, getUsers, getSpecificUser,editSpecificUser, deleteSpecificUser,testingServer } from "../controllers/user-controller.js";
 
 const router = express.Router();
 
+router.route('/').get(testingServer);
 router.route('/add').post(postUserData);
 router.route('/all').get(getUsers);
 router.route('/:id').get(getSpecificUser);
